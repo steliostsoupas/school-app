@@ -40,7 +40,7 @@ public class TeacherServiceImpl implements ITeacherService {
             if (teacherDAO.getById(teacher.getId()) == null) {
                 throw new TeacherNotFoundException(teacher);
             }
-            return teacherDAO.insert(teacher);
+            return teacherDAO.update(teacher);
         } catch (TeacherDAOException | TeacherNotFoundException e) {
             e.printStackTrace();
             throw e;
